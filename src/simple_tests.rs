@@ -1,6 +1,8 @@
-pub fn hashmap_test() {
-    use std::collections::HashMap;
+use crate::generics;
+use log::{error, info};
+use std::collections::HashMap;
 
+pub fn hashmap_test() {
     let text = "hello world wonderful world";
 
     let mut map = HashMap::new();
@@ -15,13 +17,16 @@ pub fn hashmap_test() {
 }
 
 pub fn log_test() {
-    use env_logger::Builder;
-    use log::{error, info};
-
-    // Initialize logger
-    Builder::new().parse_filters("debug").init();
-
     // Log some messages
     error!("This is an error message");
     info!("This is an info message");
+}
+
+pub fn generics_test() {
+    let mut point = generics::Point::new(10, 20);
+    let x = point.x();
+    *x = 1;
+    info!("point.x = {}", point.x());
+    let larger = point.larger();
+    info!("larger = {}", larger);
 }

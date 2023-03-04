@@ -1,7 +1,7 @@
 use std::cmp::{max, Ord};
 use std::hash::{Hash, Hasher};
 
-struct Point<T>
+pub struct Point<T>
 where
     T: Ord + Hash,
 {

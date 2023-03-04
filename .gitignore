@@ -5,7 +5,6 @@
 *.dylib
 
 # Ignore build artifacts and temporary files
-target/debug
 target/
 Cargo.lock
 *.swp
