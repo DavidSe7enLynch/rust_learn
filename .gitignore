@@ -1,0 +1,17 @@
+# Ignore compiled binary files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore build artifacts and temporary files
+target/debug
+target/
+Cargo.lock
+*.swp
+*.tmp
+
+# Ignore editor and IDE files
+.vscode/
+.idea/
+*.sublime-project
