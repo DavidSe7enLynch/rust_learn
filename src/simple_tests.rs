@@ -1,5 +1,4 @@
-use crate::generics;
-use log::{error, info};
+use crate::*;
 use std::collections::HashMap;
 
 pub fn hashmap_test() {

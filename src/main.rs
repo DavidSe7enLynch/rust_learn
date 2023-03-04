@@ -1,4 +1,5 @@
 use env_logger::Builder;
+use log::{error, info};
 
 mod generics;
 mod simple_tests;
@@ -9,5 +10,5 @@ fn main() {
     // simple_tests::hashmap_test();
     // simple_tests::log_test();
     simple_tests::generics_test();
-    println!("Hello, world!");
+    info!("Hello, world!");
 }
