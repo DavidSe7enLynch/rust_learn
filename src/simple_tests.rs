@@ -1,5 +1,6 @@
 use crate::*;
 use std::collections::HashMap;
+use generics::traits::*;
 
 pub fn hashmap_test() {
     let text = "hello world wonderful world";
@@ -28,4 +29,6 @@ pub fn generics_test() {
     info!("point.x = {}", point.x());
     let larger = point.larger();
     info!("larger = {}", larger);
+    let len = point.len();
+    info!("len = {}", len);
 }

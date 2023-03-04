@@ -1,3 +1,3 @@
-pub trait Norm2d<T> {
+pub trait Norm1d<T> {
     fn len(&self) -> T;
 }
