@@ -1,8 +1,7 @@
 use env_logger::Builder;
 use log::{error, info};
-mod simple_tests;
 pub mod generics;
-
+mod simple_tests;
 
 pub fn lib() {
     // Initialize logger

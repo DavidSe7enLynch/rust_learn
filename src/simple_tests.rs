@@ -1,6 +1,6 @@
 use crate::*;
-use std::collections::HashMap;
 use generics::traits::*;
+use std::collections::HashMap;
 
 pub fn hashmap_test() {
     let text = "hello world wonderful world";
