@@ -1,7 +1,7 @@
-mod lib;
+use library;
 // mod generics;
 // mod simple_tests;
 
 fn main() {
-    lib();
+    library::lib();
 }
