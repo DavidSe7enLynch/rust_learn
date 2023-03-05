@@ -3,7 +3,6 @@ use log::{error, info};
 
 mod generics;
 mod simple_tests;
-mod tests;
 
 fn main() {
     // Initialize logger
