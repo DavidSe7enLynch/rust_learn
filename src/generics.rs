@@ -1,7 +1,7 @@
 use std::cmp::{max, Ord};
 use std::hash::{Hash, Hasher};
-use std::ops::Add;
 use std::marker::Copy;
+use std::ops::Add;
 
 pub mod traits;
 
@@ -48,14 +48,14 @@ where
     }
 }
 
-impl<T> traits::Norm1d<T> for Point<T> 
-where T: Ord + Hash + Add<Output = T> + Copy
+impl<T> traits::Norm1d<T> for Point<T>
+where
+    T: Ord + Hash + Add<Output = T> + Copy,
 {
     fn len(&self) -> T {
         self.x + self.y
     }
 }
-
 
 #[cfg(test)]
 mod test_point {
@@ -67,7 +67,7 @@ mod test_point {
         let y = 9;
         let point1 = Point::new(x, y);
         assert_eq!(point1.larger(), x, "should return larger");
-        
+
         let point2 = Point::new(y, x);
         assert_eq!(point2.larger(), x, "should return larger");
     }
