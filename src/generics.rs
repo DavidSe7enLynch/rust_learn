@@ -32,6 +32,10 @@ where
     pub fn larger(&self) -> T {
         *max(&self.x, &self.y)
     }
+
+    pub fn panic(&self) {
+        panic!("intentionally panic for test");
+    }
 }
 
 impl<T> Hash for Point<T>
