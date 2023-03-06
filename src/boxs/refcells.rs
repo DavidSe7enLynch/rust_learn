@@ -1,3 +1,6 @@
+#[cfg(test)]
+mod test;
+
 trait MessageSender {
     fn send(&self, msg: &str);
 }
@@ -39,6 +42,3 @@ where
         }
     }
 }
-
-
-
