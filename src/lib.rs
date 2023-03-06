@@ -11,5 +11,6 @@ pub fn lib() {
     // simple_tests::log_test();
     simple_tests::generics_test();
     boxs::drops::drop_test();
+    boxs::linked_list::list_test();
     info!("Hello, world!");
 }

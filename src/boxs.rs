@@ -1,5 +1,3 @@
-mod linked_list;
 mod deref;
 pub mod drops;
-
-
+pub mod linked_list;

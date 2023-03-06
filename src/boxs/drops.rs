@@ -11,5 +11,8 @@ impl Drop for CustomSmartPointer {
 }
 
 pub fn drop_test() {
-    let a = CustomSmartPointer {data: "hello".to_string()};
+    let a = CustomSmartPointer {
+        data: "hello".to_string(),
+    };
+    drop(a);
 }
