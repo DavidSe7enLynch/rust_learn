@@ -1,7 +1,7 @@
 use std::rc::Rc;
 
-use List::{Cons, Nil};
 use log::info;
+use List::{Cons, Nil};
 
 enum List {
     Cons(i32, Rc<List>),
