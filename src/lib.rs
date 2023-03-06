@@ -10,5 +10,6 @@ pub fn lib() {
     // simple_tests::hashmap_test();
     // simple_tests::log_test();
     simple_tests::generics_test();
+    boxs::drops::drop_test();
     info!("Hello, world!");
 }
