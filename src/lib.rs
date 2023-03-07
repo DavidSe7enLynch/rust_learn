@@ -3,6 +3,7 @@ use log::{error, info};
 mod boxs;
 pub mod generics;
 mod simple_tests;
+mod state_pattern;
 
 pub fn lib() {
     // Initialize logger
