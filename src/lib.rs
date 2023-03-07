@@ -2,6 +2,7 @@ use env_logger::Builder;
 use log::{error, info};
 mod boxs;
 pub mod generics;
+mod locks;
 mod simple_tests;
 mod state_pattern;
 mod threads;

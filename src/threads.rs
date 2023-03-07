@@ -1,5 +1,4 @@
 use log::info;
-use std::any::Any;
 use std::error::Error;
 use std::sync::mpsc::{self, SendError};
 use std::thread;
@@ -63,5 +62,5 @@ pub fn mpsc_test() -> Result<(), Box<dyn Error>> {
     h0.join().map_err(|_| {"thread 0 join error"})??;
     h1.join().map_err(|_| {"thread 1 join error"})??;
     // Ok(())
-    Err("test err".into())
+    Err("mpsc test err".into())
 }
