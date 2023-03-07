@@ -15,5 +15,8 @@ pub fn lib() {
     // boxs::drops::drop_test();
     // boxs::linked_list::list_test();
     threads::move_test();
+    threads::channel_test().unwrap_or_else(|e| {
+        error!("{e}");
+    });
     info!("Hello, world!");
 }
