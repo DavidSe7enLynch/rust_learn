@@ -15,18 +15,19 @@ pub fn move_test() {
 
 pub fn channel_test() -> Result<(), Box<dyn Error>> {
     let (tx, rx) = mpsc::channel();
+    let vals = vec!["hello", "hi", "you", "world"];
 
-    // let h = thread::spawn(move || -> Result<(), &str> {
-    //     tx.send("hello world").map_err(|_| "send error")?;
-    //     Ok(())
-    // });
-    let h = thread::spawn(move || {
-        tx.send("hello world").unwrap();
+    let h = thread::spawn(move || -> Result<(), SendError<&str>>{
+        for val in vals {
+            info!("sent: {}", val);
+            tx.send(val)?;
+            thread::sleep(Duration::from_micros(1));
+        }
+        Ok(())
     });
-
-    h.join().map_err(|_| "join error")?;
-    // thread::sleep(Duration::from_millis(1));
-    info!("received: {}", rx.try_recv()?);
-
+    rx.iter().for_each(|recv| {
+        info!("received: {}", recv);
+    });
+    h.join().map_err(|_| "join error")??;
     Ok(())
 }
