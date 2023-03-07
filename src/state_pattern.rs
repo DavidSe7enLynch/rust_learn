@@ -22,7 +22,7 @@ impl Post {
         self.state = Some(self.state.take().unwrap().approve());
     }
     pub fn content(&self) -> &str {
-        self.state.unwrap()
+        self.state.as_ref().unwrap().content(self)
     }
 }
 
@@ -32,6 +32,22 @@ mod test {
 
     #[test]
     fn post() {
-        
+        let mut post = Post::new();
+        assert_eq!("", post.content());
+
+        post.approve();
+        assert_eq!("", post.content());
+
+        post.add_text("hello world");
+        assert_eq!("", post.content());
+
+        post.request_review();
+        assert_eq!("", post.content());
+
+        post.approve();
+        assert_eq!("hello world", post.content());
+
+        post.request_review();
+        assert_eq!("hello world", post.content());
     }
 }
