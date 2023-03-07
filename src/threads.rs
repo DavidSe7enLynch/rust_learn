@@ -1,4 +1,5 @@
 use log::info;
+use std::any::Any;
 use std::error::Error;
 use std::sync::mpsc::{self, SendError};
 use std::thread;
@@ -15,14 +16,15 @@ pub fn move_test() {
 pub fn channel_test() -> Result<(), Box<dyn Error>> {
     let (tx, rx) = mpsc::channel();
 
+    // let h = thread::spawn(move || -> Result<(), &str> {
+    //     tx.send("hello world").map_err(|_| "send error")?;
+    //     Ok(())
+    // });
     let h = thread::spawn(move || {
-        tx.send("hello world").unwrap_or_else(|e| {
-            // return Err(e);
-        });
-        // Ok(())
+        tx.send("hello world").unwrap();
     });
 
-    // h.join().unwrap_or_else(|e| {return Err(e);});
+    h.join().map_err(|_| "join error")?;
     // thread::sleep(Duration::from_millis(1));
     info!("received: {}", rx.try_recv()?);
 
