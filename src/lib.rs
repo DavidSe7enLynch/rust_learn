@@ -14,6 +14,6 @@ pub fn lib() {
     // simple_tests::generics_test();
     // boxs::drops::drop_test();
     // boxs::linked_list::list_test();
-    threads::thread_test();
+    threads::move_test();
     info!("Hello, world!");
 }
