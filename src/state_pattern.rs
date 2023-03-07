@@ -1,7 +1,5 @@
 mod states;
 
-// use states;
-
 struct Post {
     state: Option<Box<dyn states::State>>,
     content: String,
@@ -18,8 +16,22 @@ impl Post {
         self.content.push_str(msg);
     }
     pub fn request_review(&mut self) {
-        if let Some(state) = self.state {
-            self.state = Some(state.request_review());
-        }
+        self.state = Some(self.state.take().unwrap().request_review());
+    }
+    pub fn approve(&mut self) {
+        self.state = Some(self.state.take().unwrap().approve());
+    }
+    pub fn content(&self) -> &str {
+        self.state.unwrap()
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn post() {
+        
     }
 }

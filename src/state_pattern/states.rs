@@ -1,6 +1,11 @@
+use super::*;
+
 pub trait State {
     fn request_review(self: Box<Self>) -> Box<dyn State>;
     fn approve(self: Box<Self>) -> Box<dyn State>;
+    fn content<'a>(&self, post: &'a Post) -> &'a str {
+        ""
+    }
 }
 
 pub struct Draft {}
@@ -31,5 +36,8 @@ impl State for Approved {
     }
     fn approve(self: Box<Self>) -> Box<dyn State> {
         self
+    }
+    fn content<'a>(&self, post: &'a Post) -> &'a str {
+        &post.content
     }
 }
