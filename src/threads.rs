@@ -58,9 +58,9 @@ pub fn mpsc_test() -> Result<(), Box<dyn Error>> {
     rx.iter().for_each(|recv| {
         info!("received: {}", recv);
     });
-    
-    h0.join().map_err(|_| {"thread 0 join error"})??;
-    h1.join().map_err(|_| {"thread 1 join error"})??;
+
+    h0.join().map_err(|_| "thread 0 join error")??;
+    h1.join().map_err(|_| "thread 1 join error")??;
     // Ok(())
     Err("mpsc test err".into())
 }

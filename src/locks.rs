@@ -9,5 +9,6 @@ pub fn lock_test() -> Result<(), Box<dyn Error>> {
         *val += 1;
     }
     info!("mutex = {:?}", m);
+    info!("val = {}", *m.lock().unwrap());
     Err("lock test error".into())
 }
