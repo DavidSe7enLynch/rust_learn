@@ -18,5 +18,8 @@ pub fn lib() {
     threads::channel_test().unwrap_or_else(|e| {
         error!("{e}");
     });
+    threads::mpsc_test().unwrap_or_else(|e| {
+        error!("{e}");
+    });
     info!("Hello, world!");
 }
