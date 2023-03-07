@@ -25,5 +25,8 @@ pub fn lib() {
     locks::lock_test().unwrap_or_else(|e| {
         error!("{e}");
     });
+    locks::lock_thread_test().unwrap_or_else(|e| {
+        error!("{e}");
+    });
     info!("Hello, world!");
 }
