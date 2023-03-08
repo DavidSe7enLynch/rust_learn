@@ -1,5 +1,5 @@
-use std::slice;
 use log::info;
+use std::slice;
 
 pub fn rawpointer() {
     let mut a = 10;
@@ -42,7 +42,6 @@ pub fn extern_test() {
     unsafe {
         info!("{}", abs(a));
     }
-    
 }
 
 static mut COUNT: u32 = 0;

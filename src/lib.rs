@@ -3,13 +3,13 @@ use log::{error, info};
 pub mod boxs;
 pub mod generics;
 pub mod locks;
+pub mod macros;
+pub mod overload;
 pub mod patterns;
 pub mod simple_tests;
 pub mod state_pattern;
 pub mod threads;
 pub mod unsafes;
-pub mod overload;
-pub mod macros;
 
 pub fn lib() {
     // Initialize logger
