@@ -7,6 +7,7 @@ mod patterns;
 mod simple_tests;
 mod state_pattern;
 mod threads;
+mod unsafes;
 
 pub fn lib() {
     // Initialize logger
@@ -29,6 +30,8 @@ pub fn lib() {
     locks::lock_thread_test().unwrap_or_else(|e| {
         error!("{e}");
     });
-    patterns::pattern_test();
+    // patterns::pattern_test();
+    // unsafes::rawpointer();
+    unsafes::slices();
     info!("Hello, world!");
 }
