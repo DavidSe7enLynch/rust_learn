@@ -32,6 +32,7 @@ pub fn lib() {
     });
     // patterns::pattern_test();
     // unsafes::rawpointer();
-    unsafes::slices();
+    // unsafes::slices();
+    unsafes::extern_test();
     info!("Hello, world!");
 }

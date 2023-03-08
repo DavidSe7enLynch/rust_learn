@@ -37,4 +37,10 @@ extern "C" {
     fn abs(val: i32) -> i32;
 }
 
-pub fn ex()
+pub fn extern_test() {
+    let a = -5;
+    unsafe {
+        info!("{}", abs(a));
+    }
+    
+}
