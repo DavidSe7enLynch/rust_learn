@@ -1,6 +1,6 @@
 mod states;
 
-struct Post {
+pub struct Post {
     state: Option<Box<dyn states::State>>,
     content: String,
 }
