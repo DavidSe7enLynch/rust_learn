@@ -1,6 +1,6 @@
 use std::ops::Add;
 
-struct MilliMeter(u32);
+pub struct MilliMeter(pub u32);
 struct Meter(u32);
 
 impl Add<Meter> for MilliMeter {
@@ -10,6 +10,18 @@ impl Add<Meter> for MilliMeter {
     }
 }
 
+/// MilliMeter + MilliMeter = MilliMeter
+/// 
+/// # Example
+/// ```
+/// use library::overload::MilliMeter;
+/// 
+/// let a = MilliMeter(1);
+/// let b = MilliMeter(2);
+/// let c = a + b;
+/// assert_eq!(c.0, 3);
+/// ```
+/// 
 impl Add for MilliMeter {
     type Output = MilliMeter;
     fn add(self, rhs: Self) -> Self::Output {
