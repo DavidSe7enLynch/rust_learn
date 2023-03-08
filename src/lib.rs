@@ -8,6 +8,7 @@ mod simple_tests;
 mod state_pattern;
 mod threads;
 mod unsafes;
+mod overload;
 
 pub fn lib() {
     // Initialize logger
