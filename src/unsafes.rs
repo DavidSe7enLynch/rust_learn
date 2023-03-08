@@ -44,3 +44,5 @@ pub fn extern_test() {
     }
     
 }
+
+static mut COUNT: u32 = 0;
