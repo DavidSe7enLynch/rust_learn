@@ -3,6 +3,7 @@ use log::{error, info};
 mod boxs;
 pub mod generics;
 mod locks;
+mod patterns;
 mod simple_tests;
 mod state_pattern;
 mod threads;
@@ -28,5 +29,6 @@ pub fn lib() {
     locks::lock_thread_test().unwrap_or_else(|e| {
         error!("{e}");
     });
+    patterns::pattern_test();
     info!("Hello, world!");
 }

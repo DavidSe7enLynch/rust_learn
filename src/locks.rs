@@ -1,6 +1,6 @@
 use std::error::Error;
-use std::sync::{Mutex, Arc};
 use std::rc::Rc;
+use std::sync::{Arc, Mutex};
 use std::thread;
 
 use log::info;
