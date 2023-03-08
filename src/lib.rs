@@ -1,15 +1,15 @@
 use env_logger::Builder;
 use log::{error, info};
-mod boxs;
+pub mod boxs;
 pub mod generics;
-mod locks;
-mod patterns;
-mod simple_tests;
-mod state_pattern;
-mod threads;
-mod unsafes;
-mod overload;
-mod macros;
+pub mod locks;
+pub mod patterns;
+pub mod simple_tests;
+pub mod state_pattern;
+pub mod threads;
+pub mod unsafes;
+pub mod overload;
+pub mod macros;
 
 pub fn lib() {
     // Initialize logger
