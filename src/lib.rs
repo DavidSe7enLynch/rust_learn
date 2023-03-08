@@ -9,6 +9,7 @@ mod state_pattern;
 mod threads;
 mod unsafes;
 mod overload;
+mod macros;
 
 pub fn lib() {
     // Initialize logger
@@ -34,6 +35,7 @@ pub fn lib() {
     // patterns::pattern_test();
     // unsafes::rawpointer();
     // unsafes::slices();
-    unsafes::extern_test();
+    // unsafes::extern_test();
+    macros::hrr_vec();
     info!("Hello, world!");
 }
