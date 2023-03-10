@@ -1,5 +1,6 @@
 use env_logger::Builder;
 use log::{error, info};
+pub mod asyncs;
 pub mod boxs;
 pub mod generics;
 pub mod locks;
@@ -10,7 +11,6 @@ pub mod simple_tests;
 pub mod state_pattern;
 pub mod threads;
 pub mod unsafes;
-pub mod asyncs;
 
 pub fn lib() {
     // Initialize logger
@@ -38,5 +38,6 @@ pub fn lib() {
     unsafes::slices();
     unsafes::extern_test();
     macros::hrr_vec();
+    asyncs::test();
     info!("Hello, world!");
 }
