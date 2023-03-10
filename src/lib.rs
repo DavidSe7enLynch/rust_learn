@@ -10,6 +10,7 @@ pub mod simple_tests;
 pub mod state_pattern;
 pub mod threads;
 pub mod unsafes;
+pub mod asyncs;
 
 pub fn lib() {
     // Initialize logger
