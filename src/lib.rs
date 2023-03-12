@@ -1,5 +1,6 @@
 use env_logger::Builder;
 use log::{error, info};
+pub mod arc_clone;
 pub mod asyncs;
 pub mod boxs;
 pub mod generics;
@@ -39,5 +40,6 @@ pub fn lib() {
     unsafes::extern_test();
     macros::hrr_vec();
     asyncs::test();
+    arc_clone::arc_clone_test();
     info!("Hello, world!");
 }
